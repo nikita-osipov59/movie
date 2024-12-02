@@ -1,0 +1,11 @@
+@import "@/styles/variables.scss";
+
+@mixin svgBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: $transition-default;
+  &:hover {
+    color: $color-hover;
+  }
+}

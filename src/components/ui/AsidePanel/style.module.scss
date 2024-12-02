@@ -1,0 +1,9 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  border-right: 1px solid #151415;
+  padding: 15px;
+  height: 100vh;
+}

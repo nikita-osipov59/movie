@@ -17,6 +17,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+  width: fit-content;
 }
 
 a:hover {
@@ -48,6 +49,7 @@ p {
 ul,
 ul li {
   list-style: none;
+  width: fit-content;
 }
 
 img {
@@ -87,6 +89,7 @@ input[type="submit"] {
   background-color: transparent;
   background: none;
   cursor: pointer;
+  width: fit-content;
 }
 
 input:focus,

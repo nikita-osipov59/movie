@@ -15,3 +15,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+a {
+  color: $color-accent;
+}
+
+.active {
+  color: $color-active;
+}

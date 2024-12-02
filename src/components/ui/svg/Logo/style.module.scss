@@ -1,0 +1,7 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.box {
+  @include svgBox;
+  color: $color-primary;
+}
