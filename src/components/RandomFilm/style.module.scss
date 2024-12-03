@@ -1,0 +1,47 @@
+@import "@/styles/variables.scss";
+
+.box {
+  display: flex;
+  width: 100%;
+  background-color: #070708;
+  //   border: 1px solid #151415;
+  border-radius: 20px;
+  padding: 15px;
+  justify-content: space-around;
+  align-items: center;
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .countryList {
+    display: flex;
+  }
+  .description {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .logo {
+    max-width: 400px;
+    max-height: 150px;
+  }
+  .poster {
+    max-width: 400px;
+    max-height: 500px;
+  }
+  .imdb {
+    max-height: 25px;
+  }
+  .button {
+    padding: 15px;
+    background-color: #ad241b;
+    border-radius: 15px;
+    color: $color-main;
+    transition: $transition-default;
+    &:hover {
+      background-color: lighten($color: #ad241b, $amount: 7);
+    }
+  }
+}

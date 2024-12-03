@@ -1,3 +1,4 @@
+import { RandomFilm } from "@/components";
 import { AsidePanel, Container } from "@/components/ui";
 
 import style from "./style.module.scss";
@@ -9,7 +10,7 @@ export const HomePage = () => {
         <div className={style.wrapper}>
           <AsidePanel />
           <div className={style.box}>
-            <div>preview</div>
+            <RandomFilm />
           </div>
         </div>
       </Container>
