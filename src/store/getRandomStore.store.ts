@@ -9,6 +9,7 @@ interface Country {
 interface State {
   getRandomFilm: () => Promise<void>;
   randomFilm: {
+    id: number;
     name: string;
     logo: { url: string };
     url: string;
