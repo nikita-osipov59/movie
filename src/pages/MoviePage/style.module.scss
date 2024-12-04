@@ -1,0 +1,27 @@
+@import "@/styles/variables.scss";
+
+.wrapper {
+  .box {
+    margin-left: 150px;
+    padding: 15px;
+    color: $color-main;
+    .test {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .top {
+    margin-bottom: 100px;
+    border: 1px solid $color-border;
+    border-radius: 12px;
+    padding: 15px;
+    .backdrop {
+      border-radius: 12px;
+    }
+    .title {
+      text-align: center;
+      font-size: $fontSize-light;
+      margin-top: 15px;
+    }
+  }
+}

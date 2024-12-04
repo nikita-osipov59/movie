@@ -1,0 +1,30 @@
+@import "@/styles/variables.scss";
+
+.box {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 15px;
+  margin-left: 15px;
+  max-width: 500px;
+  .title {
+    color: #999999;
+  }
+  .genres {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    .listItem {
+      display: flex;
+      flex-direction: column;
+      padding: 7px 14px;
+      background-color: #141414;
+      border: 1px solid $color-border;
+      border-radius: 8px;
+    }
+  }
+}

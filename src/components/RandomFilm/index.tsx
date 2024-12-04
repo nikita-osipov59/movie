@@ -1,17 +1,17 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { getRandomStore } from "@/store";
+
+import { ROUTER_PATH } from "@/router/PATH";
 
 import { Play } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
-import { Link } from "react-router-dom";
-import { ROUTER_PATH } from "@/router/PATH";
 
 export const RandomFilm = () => {
   const { randomFilm, getRandomFilm } = getRandomStore();
 
-  console.log(randomFilm);
   useEffect(() => {
     getRandomFilm();
   }, []);
