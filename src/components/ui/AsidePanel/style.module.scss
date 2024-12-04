@@ -1,10 +1,13 @@
+@import "@/styles/variables.scss";
+
 .aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  border-right: 1px solid #151415;
+  border-right: 1px solid $color-border;
   padding: 15px;
   height: 100vh;
   min-width: 150px;
+  position: fixed;
 }
