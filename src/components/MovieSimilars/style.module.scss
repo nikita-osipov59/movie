@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.similarList {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+  .poster {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+  }
+  .similarItem {
+    display: flex;
+    flex-direction: column;
+    color: $color-main;
+    transition: $transition-default;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

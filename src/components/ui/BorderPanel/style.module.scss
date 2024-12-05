@@ -1,15 +1,15 @@
 @import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 
 .box {
-  background-color: #1a1a1a;
-  border: 1px solid $color-border;
-  border-radius: 12px;
-  padding: 20px;
+  @include border;
+  height: fit-content;
   .title {
-    color: #999999;
+    color: $color-accent;
     margin-bottom: 15px;
   }
   .text {
+    overflow-x: auto;
     color: $color-main;
   }
 }

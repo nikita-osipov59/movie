@@ -9,3 +9,10 @@
     color: $color-hover;
   }
 }
+
+@mixin border {
+  background-color: $color-backgroundInfo;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  padding: 20px;
+}

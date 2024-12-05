@@ -5,12 +5,18 @@
     margin-left: 150px;
     padding: 15px;
     color: $color-main;
-    .test {
+    .info {
       display: flex;
       justify-content: space-between;
+      .column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 70%;
+      }
     }
   }
-  .top {
+  .preview {
     margin-bottom: 100px;
     border: 1px solid $color-border;
     border-radius: 12px;

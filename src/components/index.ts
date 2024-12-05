@@ -1,2 +1,4 @@
-export * from "./RandomFilm";
-export * from "./FilmInfoPanel";
+export * from "./MovieRandom";
+export * from "./MovieInfoPanel";
+export * from "./MovieCast";
+export * from "./MovieSimilars";

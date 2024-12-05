@@ -9,7 +9,7 @@ import { Play } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
 
-export const RandomFilm = () => {
+export const MovieRandom = () => {
   const { randomFilm, getRandomFilm } = getRandomStore();
 
   useEffect(() => {

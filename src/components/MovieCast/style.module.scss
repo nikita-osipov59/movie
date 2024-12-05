@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.castList {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+  .castItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .photo {
+    height: 200px;
+    min-width: 130px;
+    border-radius: 12px;
+  }
+  .role {
+    font-size: $fontSize-low;
+    color: $color-secondary;
+  }
+}

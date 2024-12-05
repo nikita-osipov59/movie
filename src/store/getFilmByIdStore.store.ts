@@ -10,6 +10,21 @@ interface Genre {
   name: string;
 }
 
+interface Person {
+  id: string;
+  name: string;
+  photo: string;
+  description: string;
+  profession: string;
+}
+
+interface SimilarMovie {
+  id: string;
+  name: string;
+  poster: { url: string };
+  length: number;
+}
+
 interface State {
   getFilmById: (id: string) => Promise<void>;
   filmById: {
@@ -24,6 +39,8 @@ interface State {
     countries: Country[];
     description: string;
     genres: Genre[];
+    persons: Person[];
+    similarMovies?: SimilarMovie[];
   } | null;
 }
 

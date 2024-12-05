@@ -2,7 +2,7 @@ import style from "./style.module.scss";
 
 import { getFilmByIdStore } from "@/store";
 
-export const FilmInfoPanel = () => {
+export const MovieInfoPanel = () => {
   const { filmById } = getFilmByIdStore();
 
   return (
