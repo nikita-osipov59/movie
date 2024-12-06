@@ -12,7 +12,7 @@
   .similarItem {
     display: flex;
     flex-direction: column;
-    color: $color-main;
+    color: var(--color-main);
     transition: $transition-default;
     &:hover {
       opacity: 0.5;

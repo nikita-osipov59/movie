@@ -6,13 +6,14 @@
   gap: 15px;
   transition: $transition-default;
   &:hover {
-    color: $color-hover;
+    color: var(--color-hover);
   }
 }
 
 @mixin border {
-  background-color: $color-backgroundInfo;
-  border: 1px solid $color-border;
+  background-color: var(--color-bg-info);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 20px;
+  transition: $transition-default;
 }

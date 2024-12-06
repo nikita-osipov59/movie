@@ -16,6 +16,6 @@
   }
   .role {
     font-size: $fontSize-low;
-    color: $color-secondary;
+    color: var(--color-accent);
   }
 }

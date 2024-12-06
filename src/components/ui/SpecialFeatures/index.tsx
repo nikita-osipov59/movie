@@ -1,11 +1,14 @@
 import { LogOut, Theme } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
+import { themeStore } from "@/store";
 
 export const SpecialFeatures = () => {
+  const { switchTheme } = themeStore();
+
   return (
     <div className={style.box}>
-      <button>
+      <button onClick={switchTheme}>
         <Theme size={22} text="Theme" />
       </button>
       <button>

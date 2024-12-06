@@ -10,17 +10,38 @@ body {
   line-height: $lineHeight-default;
   font-weight: $fontWeight-regular;
   font-size: $fontSize-default;
-  color: $color-accent;
-  background-color: $color-background;
+  color: var(--color-main);
+  background-color: var(--color-bg-body);
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: $transition-default;
+}
+
+[theme="light"] {
+  --color-bg-body: #fff;
+  --color-bg-info: #fff;
+  --color-main: #000;
+  --color-accent: #75767c;
+  --color-hover: #000;
+  --color-active: #000;
+  --color-border: #262626;
+}
+
+[theme="dark"] {
+  --color-bg-body: #100f10;
+  --color-bg-info: #1a1a1a;
+  --color-main: #fff;
+  --color-accent: #75767c;
+  --color-hover: #fff;
+  --color-active: #fff;
+  --color-border: #262626;
 }
 
 a {
-  color: $color-accent;
+  color: var(--color-accent);
 }
 
 .active {
-  color: $color-active;
+  color: var(--color-active);
 }

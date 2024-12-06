@@ -5,11 +5,12 @@
   @include border;
   height: fit-content;
   .title {
-    color: $color-accent;
+    color: var(--color-accent);
     margin-bottom: 15px;
   }
   .text {
     overflow-x: auto;
-    color: $color-main;
+    color: var(--color-main);
+    transition: $transition-default;
   }
 }

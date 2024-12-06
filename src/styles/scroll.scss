@@ -4,7 +4,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: $color-background;
+  background: var(--color-bg-body);
 }
 ::-webkit-scrollbar-thumb {
   background: $color-primary;
@@ -16,7 +16,7 @@
 }
 
 html {
-  scrollbar-color: $color-primary $color-background;
+  scrollbar-color: $color-primary var(--color-bg-body);
   scrollbar-width: thin;
   scroll-behavior: smooth;
 }
