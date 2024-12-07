@@ -3,10 +3,12 @@
 
 .box {
   @include border;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   height: fit-content;
   .title {
     color: var(--color-accent);
-    margin-bottom: 15px;
   }
   .text {
     overflow-x: auto;
