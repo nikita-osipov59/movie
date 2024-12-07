@@ -24,14 +24,14 @@ export const MoviePage = () => {
         <div className={style.wrapper}>
           <AsidePanel />
           <div className={style.box}>
-            <div className={style.preview}>
+            <BorderPanel>
               <img
                 className={style.backdrop}
                 src={filmById?.backdrop.url}
                 alt={filmById?.name}
               />
               <p className={style.title}>{filmById?.name}</p>
-            </div>
+            </BorderPanel>
             <div className={style.info}>
               <div className={style.column}>
                 <BorderPanel title="Description">

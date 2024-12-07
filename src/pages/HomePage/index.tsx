@@ -1,4 +1,4 @@
-import { AsidePanel, Container } from "@/components/ui";
+import { AsidePanel, BorderPanel, Container, Search } from "@/components/ui";
 import { MovieRandom } from "@/components";
 
 import style from "./style.module.scss";
@@ -10,7 +10,10 @@ export const HomePage = () => {
         <div className={style.wrapper}>
           <AsidePanel />
           <div className={style.box}>
-            <MovieRandom />
+            <Search />
+            <BorderPanel>
+              <MovieRandom />
+            </BorderPanel>
           </div>
         </div>
       </Container>

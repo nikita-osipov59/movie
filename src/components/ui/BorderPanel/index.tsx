@@ -1,7 +1,7 @@
 import style from "./style.module.scss";
 
 interface BorderPanelProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title?: string;
 }
 
