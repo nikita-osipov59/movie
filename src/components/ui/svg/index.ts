@@ -3,3 +3,4 @@ export * from "./LogOut";
 export * from "./Home";
 export * from "./Theme";
 export * from "./Play";
+export * from "./Next";

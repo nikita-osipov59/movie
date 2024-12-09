@@ -8,6 +8,9 @@
   &:hover {
     color: var(--color-hover);
   }
+  svg {
+    transition: $transition-default;
+  }
 }
 
 @mixin border {

@@ -23,9 +23,11 @@ body {
   --color-bg-info: #fff;
   --color-main: #000;
   --color-accent: #75767c;
+  --color-primary: #f50;
   --color-hover: #000;
   --color-active: #000;
   --color-border: #262626;
+  --color-focus: #f50;
 }
 
 [theme="dark"] {
@@ -33,9 +35,11 @@ body {
   --color-bg-info: #1a1a1a;
   --color-main: #fff;
   --color-accent: #75767c;
+  --color-primary: #f50;
   --color-hover: #fff;
   --color-active: #fff;
   --color-border: #262626;
+  --color-focus: #f50;
 }
 
 a {

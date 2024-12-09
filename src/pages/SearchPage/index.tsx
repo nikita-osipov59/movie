@@ -1,9 +1,18 @@
-import { AsidePanel, BorderPanel, Container, Search } from "@/components/ui";
-import { MovieRandom } from "@/components";
+import {
+  AsidePanel,
+  BorderPanel,
+  Container,
+  List,
+  Search,
+} from "@/components/ui";
+
+import { getBySearchStore } from "@/store";
 
 import style from "./style.module.scss";
 
-export const HomePage = () => {
+export const SearchPage = () => {
+  const { data } = getBySearchStore();
+
   return (
     <section>
       <Container>
@@ -11,8 +20,8 @@ export const HomePage = () => {
           <AsidePanel />
           <div className={style.box}>
             <Search />
-            <BorderPanel title="Random query">
-              <MovieRandom />
+            <BorderPanel title="Query">
+              <List data={data} />
             </BorderPanel>
           </div>
         </div>

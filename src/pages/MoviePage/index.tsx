@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getFilmByIdStore } from "@/store";
 
 import { MovieCast, MovieInfoPanel, MovieSimilars } from "@/components/";
-import { AsidePanel, Container, BorderPanel } from "@/components/ui";
+import { AsidePanel, Container, BorderPanel, Search } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -24,6 +24,7 @@ export const MoviePage = () => {
         <div className={style.wrapper}>
           <AsidePanel />
           <div className={style.box}>
+            <Search />
             <BorderPanel>
               <img
                 className={style.backdrop}
