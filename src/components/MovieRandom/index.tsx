@@ -5,7 +5,7 @@ import { getRandomStore } from "@/store";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { Play } from "@/components/ui/svg";
+import { Play, Refresh } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
 
@@ -13,7 +13,9 @@ export const MovieRandom = () => {
   const { randomFilm, getRandomFilm } = getRandomStore();
 
   useEffect(() => {
-    getRandomFilm();
+    if (!randomFilm) {
+      getRandomFilm();
+    }
   }, []);
   return (
     <>
@@ -35,12 +37,17 @@ export const MovieRandom = () => {
                 })}
               </ul>
             </div>
-            <Link
-              to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
-              className={style.button}
-            >
-              <Play size={22} text="Watch" />
-            </Link>
+            <div className={style.buttonBox}>
+              <Link
+                to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
+                className={style.button}
+              >
+                <Play size={22} text="Watch" />
+              </Link>
+              <button className={style.button} onClick={getRandomFilm}>
+                <Refresh size={22} />
+              </button>
+            </div>
           </div>
           <div>
             <img

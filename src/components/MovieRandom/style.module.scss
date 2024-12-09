@@ -30,14 +30,18 @@
   .imdb {
     max-height: 25px;
   }
-  .button {
-    padding: 15px;
-    background-color: $color-primary;
-    border-radius: 15px;
-    color: var(--color-main);
-    transition: $transition-default;
-    &:hover {
-      background-color: lighten($color: $color-primary, $amount: 7);
+  .buttonBox {
+    display: flex;
+    gap: 10px;
+    .button {
+      padding: 15px;
+      background-color: $color-primary;
+      border-radius: 15px;
+      color: var(--color-main);
+      transition: $transition-default;
+      &:hover {
+        background-color: lighten($color: $color-primary, $amount: 7);
+      }
     }
   }
 }

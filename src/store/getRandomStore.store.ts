@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 import { apiBase } from "@/api/config";
 
@@ -20,17 +21,22 @@ interface State {
   } | null;
 }
 
-export const getRandomStore = create<State>((set) => ({
-  randomFilm: null,
-  getRandomFilm: async () => {
-    try {
-      const response = await apiBase.get(
-        `movie/random?notNullFields=logo.url&notNullFields=votes.imdb&notNullFields=ageRating&notNullFields=countries.name`
-      );
+export const getRandomStore = create<State>()(
+  persist(
+    (set) => ({
+      randomFilm: null,
+      getRandomFilm: async () => {
+        try {
+          const response = await apiBase.get(
+            `movie/random?notNullFields=logo.url&notNullFields=votes.imdb&notNullFields=ageRating&notNullFields=countries.name`
+          );
 
-      set(() => ({ randomFilm: response.data }));
-    } catch (error) {
-      console.error("Error fetching history:", error);
-    }
-  },
-}));
+          set(() => ({ randomFilm: response.data }));
+        } catch (error) {
+          console.error("Error fetching history:", error);
+        }
+      },
+    }),
+    { name: "randomFilm" }
+  )
+);
