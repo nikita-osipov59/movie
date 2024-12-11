@@ -3,10 +3,7 @@ import { useEffect } from "react";
 
 import { getFilmByIdStore } from "@/store";
 
-import { MovieCast, MovieInfoPanel, MovieSimilars } from "@/components/";
-import { AsidePanel, Container, BorderPanel, Search } from "@/components/ui";
-
-import style from "./style.module.scss";
+import { MovieInfo } from "@/components/";
 
 export const MoviePage = () => {
   const { filmById, getFilmById } = getFilmByIdStore();
@@ -20,33 +17,7 @@ export const MoviePage = () => {
   }, [id]);
   return (
     <section>
-      <Container>
-        <div className={style.wrapper}>
-          <AsidePanel />
-          <div className={style.box}>
-            <Search />
-            <BorderPanel>
-              <img
-                className={style.backdrop}
-                src={filmById?.backdrop.url}
-                alt={filmById?.name}
-              />
-              <p className={style.title}>{filmById?.name}</p>
-            </BorderPanel>
-            <div className={style.info}>
-              <div className={style.column}>
-                <BorderPanel title="Description">
-                  {filmById?.description}
-                </BorderPanel>
-                <MovieCast />
-                {filmById?.similarMovies &&
-                  filmById?.similarMovies?.length > 0 && <MovieSimilars />}
-              </div>
-              <MovieInfoPanel />
-            </div>
-          </div>
-        </div>
-      </Container>
+      <MovieInfo />
     </section>
   );
 };

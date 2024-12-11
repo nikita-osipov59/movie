@@ -1,22 +1,14 @@
-import { AsidePanel, BorderPanel, Container, Search } from "@/components/ui";
+import { BorderPanel } from "@/components/ui";
 import { MovieRandom } from "@/components";
-
-import style from "./style.module.scss";
 
 export const HomePage = () => {
   return (
-    <section>
-      <Container>
-        <div className={style.wrapper}>
-          <AsidePanel />
-          <div className={style.box}>
-            <Search />
-            <BorderPanel title="Random query">
-              <MovieRandom />
-            </BorderPanel>
-          </div>
-        </div>
-      </Container>
-    </section>
+    <>
+      <section>
+        <BorderPanel title="Random query">
+          <MovieRandom />
+        </BorderPanel>
+      </section>
+    </>
   );
 };
