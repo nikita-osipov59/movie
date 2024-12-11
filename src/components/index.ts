@@ -1,4 +1,4 @@
-// export * from "./Auth";
+export * from "./Auth";
 export * from "./MovieRandom";
 export * from "./MovieInfo";
 export * from "./MovieInfoPanel";

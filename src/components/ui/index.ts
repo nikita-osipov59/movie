@@ -5,3 +5,4 @@ export * from "./Search";
 export * from "./List";
 export * from "./SpecialFeatures";
 export * from "./BorderPanel";
+export * from "./Form";

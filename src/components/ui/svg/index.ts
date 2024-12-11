@@ -5,3 +5,5 @@ export * from "./Theme";
 export * from "./Play";
 export * from "./Next";
 export * from "./Refresh";
+export * from "./Mail";
+export * from "./Lock";
