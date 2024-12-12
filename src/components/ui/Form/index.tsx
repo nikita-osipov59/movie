@@ -7,15 +7,17 @@ import { Mail, Lock } from "@/components/ui/svg";
 
 import { getAuthStore } from "@/store";
 
+import { useIdentification } from "@/hooks";
+
 import style from "./style.module.scss";
 
-interface FormProps {
-  handleClick: (email: string, password: string) => void;
-}
-
-export const Form = ({ handleClick }: FormProps) => {
+export const Form = () => {
   const { email, setEmail } = getAuthStore();
+
+  const { handleLogin, handleRegistration } = useIdentification();
+
   const [password, setPassword] = useState("");
+
   const location = useLocation();
 
   return (
@@ -57,7 +59,7 @@ export const Form = ({ handleClick }: FormProps) => {
         <>
           <button
             className={style.button}
-            onClick={() => handleClick(email, password)}
+            onClick={() => handleRegistration(email, password)}
             type="submit"
           >
             Register
@@ -71,7 +73,7 @@ export const Form = ({ handleClick }: FormProps) => {
         <>
           <button
             className={style.button}
-            onClick={() => handleClick(email, password)}
+            onClick={() => handleLogin(email, password)}
             type="submit"
           >
             Login

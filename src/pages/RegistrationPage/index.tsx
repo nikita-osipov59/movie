@@ -1,6 +1,4 @@
-import { AsidePanel, Container } from "@/components/ui";
-
-import { Registration } from "@/components/Registration";
+import { AsidePanel, Container, Form } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -10,7 +8,7 @@ export const RegistrationPage = () => {
       <Container>
         <AsidePanel />
         <div className={style.box}>
-          <Registration />
+          <Form />
         </div>
       </Container>
     </section>

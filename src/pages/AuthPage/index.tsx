@@ -1,6 +1,4 @@
-import { AsidePanel, Container } from "@/components/ui";
-
-import { Auth } from "@/components";
+import { AsidePanel, Container, Form } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -10,7 +8,7 @@ export const AuthPage = () => {
       <Container>
         <AsidePanel />
         <div className={style.box}>
-          <Auth />
+          <Form />
         </div>
       </Container>
     </section>
