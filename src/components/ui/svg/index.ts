@@ -7,3 +7,4 @@ export * from "./Next";
 export * from "./Refresh";
 export * from "./Mail";
 export * from "./Lock";
+export * from "./User";

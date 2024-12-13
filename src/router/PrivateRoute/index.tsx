@@ -6,6 +6,8 @@ import { AsidePanel, Container, Search } from "@/components/ui";
 
 import { getAuthStore } from "@/store";
 
+import { UserPanel } from "@/components";
+
 import style from "./style.module.scss";
 
 export const PrivateRoute = () => {
@@ -20,7 +22,10 @@ export const PrivateRoute = () => {
       <Container>
         <AsidePanel />
         <div className={style.box}>
-          <Search />
+          <div className={style.bar}>
+            <Search />
+            <UserPanel />
+          </div>
           <Outlet />
         </div>
       </Container>

@@ -1,0 +1,22 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-main);
+  transition: $transition-default;
+  @include border;
+  &:hover {
+    color: var(--color-primary);
+    svg {
+      color: var(--color-primary);
+    }
+  }
+  .avatar {
+    width: 64px;
+    max-height: 42px;
+    border-radius: 12px;
+  }
+}

@@ -3,6 +3,7 @@ export const ROUTER_PATH = {
   AUTH: "/auth",
   REGISTRATION: "/registration",
   MOVIE: "/movie",
+  PROFILE: "/profile",
   SEARCH: "/search",
   NOTFOUNDPAGE: "*",
 };
