@@ -2,13 +2,12 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface User {
-  setUser: (value: { id: string; email: string; name?: string | null }) => void;
+  setUser: (value: { id: string; email: string }) => void;
   setEmail: (email: string) => void;
   removeUser: () => void;
   isAuth: boolean;
   email: string;
   id: string | null;
-  name: string | null;
 }
 
 const clearStorage = () => {
@@ -21,9 +20,8 @@ export const getAuthStore = create<User>()(
       isAuth: false,
       email: "",
       id: null,
-      name: null,
-      setUser: ({ id, email, name }) => {
-        set(() => ({ id: id, email: email, name: name }));
+      setUser: ({ id, email }) => {
+        set(() => ({ id: id, email: email }));
         set(() => ({ isAuth: true }));
       },
       setEmail: (email) => {
