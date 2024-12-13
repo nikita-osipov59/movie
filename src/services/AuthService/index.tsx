@@ -4,29 +4,32 @@ import { useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
 import { getAuthStore } from "@/store";
 
-export const useIdentification = () => {
+export const AuthService = () => {
   const navigate = useNavigate();
 
-  const { setUser } = getAuthStore();
+  // const user = auth.currentUser;
+
+  const { setUser, removeUser } = getAuthStore();
 
   const handleLogin = (email: string, password: string) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log(user);
         setUser({
           email: user.email!,
           id: user.uid,
+          name: user.displayName,
         });
         navigate(ROUTER_PATH.HOME);
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch((error) => {
+        alert(error.code);
       });
   };
 
@@ -39,11 +42,22 @@ export const useIdentification = () => {
         });
         navigate(ROUTER_PATH.AUTH);
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch((error) => {
+        alert(error.code);
       });
   };
-  return { handleRegistration, handleLogin };
+
+  const handleSignOut = () => {
+    signOut(auth);
+    removeUser();
+    console.log("Выход");
+  };
+
+  return {
+    handleRegistration,
+    handleLogin,
+    handleSignOut,
+  };
 };
 
 //  TODO: как-то оптимизировать бы

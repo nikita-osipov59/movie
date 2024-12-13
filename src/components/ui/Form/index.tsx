@@ -7,14 +7,14 @@ import { Mail, Lock } from "@/components/ui/svg";
 
 import { getAuthStore } from "@/store";
 
-import { useIdentification } from "@/hooks";
+import { AuthService } from "@/services";
 
 import style from "./style.module.scss";
 
 export const Form = () => {
   const { email, setEmail } = getAuthStore();
 
-  const { handleLogin, handleRegistration } = useIdentification();
+  const { handleLogin, handleRegistration } = AuthService();
 
   const [password, setPassword] = useState("");
 
