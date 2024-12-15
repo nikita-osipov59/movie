@@ -4,7 +4,7 @@
 .box {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 300px;
   gap: 15px;
   @include border;
   .title {
@@ -43,6 +43,7 @@
     border-radius: 12px;
     color: var(--color-main);
     transition: $transition-default;
+    width: 100%;
     &:hover {
       background-color: lighten($color: $color-primary, $amount: 7);
     }
