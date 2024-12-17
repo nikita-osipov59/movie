@@ -1,20 +1,29 @@
 @import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 
 .box {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  position: relative;
+  height: 500px;
+  justify-content: flex-start;
   align-items: center;
+  @include border;
+  color: $color-white;
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
     gap: 15px;
+    z-index: 2;
+    max-width: 400px;
   }
   .countryList {
     display: flex;
   }
   .description {
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     align-items: center;
     margin-bottom: 15px;
@@ -24,8 +33,16 @@
     max-height: 150px;
   }
   .poster {
-    max-width: 400px;
-    max-height: 500px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 500px 0px 300px 0px rgb(0, 0, 0) inset;
   }
   .imdb {
     max-height: 25px;
@@ -37,7 +54,7 @@
       padding: 15px;
       background-color: $color-primary;
       border-radius: 15px;
-      color: var(--color-main);
+      color: $color-white;
       transition: $transition-default;
       &:hover {
         background-color: lighten($color: $color-primary, $amount: 7);

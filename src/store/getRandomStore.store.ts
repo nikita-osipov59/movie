@@ -13,6 +13,7 @@ interface State {
     id: number;
     name: string;
     logo: { url: string };
+    backdrop: { url: string };
     url: string;
     rating: { imdb: number };
     year: number;

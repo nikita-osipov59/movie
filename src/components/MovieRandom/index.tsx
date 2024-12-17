@@ -49,13 +49,10 @@ export const MovieRandom = () => {
               </button>
             </div>
           </div>
-          <div>
-            <img
-              className={style.poster}
-              src={randomFilm.poster.url}
-              alt={randomFilm.name}
-            />
-          </div>
+          <div
+            className={style.poster}
+            style={{ backgroundImage: `url(${randomFilm.backdrop.url})` }}
+          />
         </div>
       )}
     </>
