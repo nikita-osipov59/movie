@@ -16,7 +16,7 @@ export const AuthService = () => {
 
   // const user = auth.currentUser;
 
-  const { setUser, removeUser } = getAuthStore();
+  const { setUser, setError, removeUser } = getAuthStore();
 
   const handleLogin = (email: string, password: string) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -29,7 +29,10 @@ export const AuthService = () => {
         navigate(ROUTER_PATH.HOME);
       })
       .catch((error) => {
-        alert(error.code);
+        setError(error.code);
+        setTimeout(() => {
+          setError(null);
+        }, 5000);
       });
   };
 
@@ -43,7 +46,10 @@ export const AuthService = () => {
         navigate(ROUTER_PATH.AUTH);
       })
       .catch((error) => {
-        alert(error.code);
+        setError(error.code);
+        setTimeout(() => {
+          setError(null);
+        }, 5000);
       });
   };
 
