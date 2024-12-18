@@ -1,4 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
+
 import { useState } from "react";
 
 import { ROUTER_PATH } from "@/router/PATH";
@@ -12,7 +13,7 @@ import { AuthService } from "@/services";
 import style from "./style.module.scss";
 
 export const Form = () => {
-  const { email, setEmail } = getAuthStore();
+  const { error, email, setEmail } = getAuthStore();
 
   const { handleLogin, handleRegistration } = AuthService();
 
@@ -55,6 +56,7 @@ export const Form = () => {
           placeholder="password"
         />
       </div>
+      {error && <span className="error">{error}</span>}
       {location.pathname === ROUTER_PATH.REGISTRATION ? (
         <>
           <button
