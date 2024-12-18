@@ -11,23 +11,25 @@ export const MovieSimilars = () => {
   return (
     <>
       <BorderPanel title="Similar movies">
-        <ul className={style.similarList}>
-          {filmById?.similarMovies?.map((item) => (
-            <li key={item.id}>
-              <Link
-                className={style.similarItem}
-                to={ROUTER_PATH.MOVIE + `/${item.id}`}
-              >
-                <img
-                  className={style.poster}
-                  src={item.poster.url}
-                  alt={item.name}
-                />
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="overflowAuto">
+          <ul className={style.similarList}>
+            {filmById?.similarMovies?.map((item) => (
+              <li key={item.id}>
+                <Link
+                  className={style.similarItem}
+                  to={ROUTER_PATH.MOVIE + `/${item.id}`}
+                >
+                  <img
+                    className={style.poster}
+                    src={item.poster.url}
+                    alt={item.name}
+                  />
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </BorderPanel>
     </>
   );
