@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { BtnLinkProps } from "./Link.props";
+import { BtnLinkProps } from "./BtnLinkProps.props";
 
 import style from "./style.module.scss";
 
