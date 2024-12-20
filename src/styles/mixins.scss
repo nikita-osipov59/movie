@@ -20,3 +20,31 @@
   padding: 15px;
   transition: $transition-default;
 }
+
+@mixin button {
+  padding: 15px;
+  background-color: $color-primary;
+  border-radius: 12px;
+  color: $color-white;
+  transition: $transition-default;
+  &:hover {
+    background-color: var(--color-primary);
+    filter: brightness(0.8);
+  }
+}
+
+@mixin link {
+  padding: 15px;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  color: $color-white;
+  transition: $transition-default;
+  &:hover {
+    background-color: var(--color-primary);
+    filter: brightness(0.8);
+  }
+}
+
+@mixin widthFull {
+  width: 100%;
+}

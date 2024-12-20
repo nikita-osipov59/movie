@@ -4,6 +4,8 @@ import { themeStore } from "@/store";
 
 import { AuthService } from "@/services";
 
+import { Button } from "@/components/ui";
+
 import style from "./style.module.scss";
 
 export const SpecialFeatures = () => {
@@ -13,12 +15,12 @@ export const SpecialFeatures = () => {
 
   return (
     <div className={style.box}>
-      <button onClick={switchTheme}>
+      <Button onClick={switchTheme} styled={false} width="100%">
         <Theme size={22} text="Theme" />
-      </button>
-      <button onClick={handleSignOut}>
+      </Button>
+      <Button onClick={handleSignOut} styled={false} width="100%">
         <LogOut size={22} text="Log Out" />
-      </button>
+      </Button>
     </div>
   );
 };

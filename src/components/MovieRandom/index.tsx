@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import { getRandomStore } from "@/store";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { BorderPanel } from "@/components/ui";
+import { BorderPanel, Button, LinkBtn } from "@/components/ui";
 
 import { Play, Refresh } from "@/components/ui/svg";
 
@@ -43,15 +42,12 @@ export const MovieRandom = () => {
                 </ul>
               </div>
               <div className={style.buttonBox}>
-                <Link
-                  to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
-                  className={style.button}
-                >
+                <LinkBtn to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}>
                   <Play size={22} text="Watch" />
-                </Link>
-                <button className={style.button} onClick={getRandomFilm}>
+                </LinkBtn>
+                <Button onClick={getRandomFilm}>
                   <Refresh size={22} />
-                </button>
+                </Button>
               </div>
             </div>
             <div

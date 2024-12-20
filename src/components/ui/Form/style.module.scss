@@ -36,20 +36,9 @@
       color: var(--color-accent);
     }
   }
-
-  .button {
-    padding: 15px;
-    background-color: $color-primary;
-    border-radius: 12px;
-    color: var(--color-main);
-    transition: $transition-default;
-    width: 100%;
-    &:hover {
-      background-color: lighten($color: $color-primary, $amount: 7);
-    }
-  }
   .reminder {
     display: flex;
+    flex-direction: column;
     gap: 5px;
     color: var(--color-accent);
     a {

@@ -6,6 +6,8 @@ import { ROUTER_PATH } from "@/router/PATH";
 
 import { Mail, Lock } from "@/components/ui/svg";
 
+import { Button } from "@/components/ui";
+
 import { getAuthStore } from "@/store";
 
 import { AuthService } from "@/services";
@@ -59,13 +61,12 @@ export const Form = () => {
       {error && <span className="error">{error}</span>}
       {location.pathname === ROUTER_PATH.REGISTRATION ? (
         <>
-          <button
-            className={style.button}
+          <Button
             onClick={() => handleRegistration(email, password)}
-            type="submit"
+            width="100%"
           >
             Register
-          </button>
+          </Button>
           <p className={style.reminder}>
             Have an account?
             <Link to={ROUTER_PATH.AUTH}>Login</Link>
@@ -73,13 +74,9 @@ export const Form = () => {
         </>
       ) : (
         <>
-          <button
-            className={style.button}
-            onClick={() => handleLogin(email, password)}
-            type="submit"
-          >
+          <Button onClick={() => handleLogin(email, password)} width="100%">
             Login
-          </button>
+          </Button>
           <p className={style.reminder}>
             Dont have an account?
             <Link to={ROUTER_PATH.REGISTRATION}>Registration</Link>
