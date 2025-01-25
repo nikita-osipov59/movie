@@ -1,4 +1,4 @@
-import { Container, Form } from "@/components/ui";
+import { BorderPanel, Container, Form } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -7,7 +7,9 @@ export const RegistrationPage = () => {
     <section>
       <Container>
         <div className={style.box}>
-          <Form />
+          <BorderPanel>
+            <Form />
+          </BorderPanel>
         </div>
       </Container>
     </section>

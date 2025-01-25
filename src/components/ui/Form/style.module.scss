@@ -1,48 +1,73 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
-.box {
+.wrapper {
   display: flex;
-  flex-direction: column;
-  width: 300px;
   gap: 15px;
-  @include border;
-  .title {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    color: var(--color-accent);
-  }
-  .input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 5px;
-    width: fit-content;
-    @include border;
-    padding-left: 45px;
-    &:focus-within {
-      border: 1px solid var(--color-focus);
+  .welcomeBox {
+    width: 300px;
+    background-image: url(/public/welcomeBG.png);
+    background-size: cover;
+    border-radius: 12px;
+    .welcomeTitle {
+      height: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      font-size: $fontSize-light;
+      flex-direction: column;
+      gap: 5px;
+      span {
+        font-size: $fontSize-large;
+        text-transform: uppercase;
+        color: var(--color-primary);
+      }
     }
   }
-  .mail,
-  .lock {
-    position: relative;
-    svg {
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-      cursor: text;
-      color: var(--color-accent);
-    }
-  }
-  .reminder {
+
+  .box {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    color: var(--color-accent);
-    a {
-      color: var(--color-main);
+    width: 300px;
+    gap: 15px;
+    @include border;
+    .title {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      color: var(--color-accent);
+    }
+    .input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+      width: fit-content;
+      @include border;
+      padding-left: 45px;
+      &:focus-within {
+        border: 1px solid var(--color-focus);
+      }
+    }
+    .mail,
+    .lock {
+      position: relative;
+      svg {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        cursor: text;
+        color: var(--color-accent);
+      }
+    }
+    .reminder {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: var(--color-accent);
+      a {
+        color: var(--color-main);
+      }
     }
   }
 }
