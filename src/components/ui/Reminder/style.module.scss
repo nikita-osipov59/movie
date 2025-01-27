@@ -1,0 +1,9 @@
+.reminder {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--color-accent);
+  a {
+    color: var(--color-main);
+  }
+}

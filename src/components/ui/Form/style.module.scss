@@ -42,7 +42,7 @@
       align-items: center;
       gap: 10px;
       margin-top: 5px;
-      width: fit-content;
+      width: -webkit-fill-available;
       @include border;
       padding-left: 45px;
       &:focus-within {
@@ -58,15 +58,6 @@
         left: 15px;
         cursor: text;
         color: var(--color-accent);
-      }
-    }
-    .reminder {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      color: var(--color-accent);
-      a {
-        color: var(--color-main);
       }
     }
   }

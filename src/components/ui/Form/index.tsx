@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -6,11 +6,11 @@ import { ROUTER_PATH } from "@/router/PATH";
 
 import { Mail, Lock } from "@/components/ui/svg";
 
-import { Button } from "@/components/ui";
-
 import { getAuthStore } from "@/store";
 
 import { AuthService } from "@/services";
+
+import { Reminder } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -65,29 +65,14 @@ export const Form = () => {
           />
         </div>
         {error && <span className="error">{error}</span>}
-        {location.pathname === ROUTER_PATH.REGISTRATION ? (
-          <>
-            <Button
-              onClick={() => handleRegistration(email, password)}
-              width="100%"
-            >
-              Register
-            </Button>
-            <p className={style.reminder}>
-              Have an account?
-              <Link to={ROUTER_PATH.AUTH}>Login</Link>
-            </p>
-          </>
-        ) : (
-          <>
-            <Button onClick={() => handleLogin(email, password)} width="100%">
-              Login
-            </Button>
-            <p className={style.reminder}>
-              Dont have an account?
-              <Link to={ROUTER_PATH.REGISTRATION}>Registration</Link>
-            </p>
-          </>
+        {location.pathname === ROUTER_PATH.REGISTRATION && (
+          <Reminder
+            view="Registration"
+            onClick={() => handleRegistration(email, password)}
+          />
+        )}
+        {location.pathname === ROUTER_PATH.AUTH && (
+          <Reminder view="Login" onClick={() => handleLogin(email, password)} />
         )}
       </div>
     </div>
