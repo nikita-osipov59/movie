@@ -1,6 +1,10 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
-.button {
-  @include button;
+.primary {
+  @include buttonPrimary;
+}
+
+.default {
+  @include buttonDefault;
 }

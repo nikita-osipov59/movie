@@ -6,12 +6,12 @@ export const Button: React.FC<BtnProps> = ({
   children,
   type = "button",
   width,
-  styled = true,
+  variant,
   onClick,
 }) => {
   return (
     <button
-      className={styled ? style.button : ""}
+      className={style[`${variant}`]}
       onClick={onClick}
       type={type}
       style={{ width: width }}

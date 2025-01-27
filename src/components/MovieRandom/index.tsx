@@ -45,7 +45,7 @@ export const MovieRandom = () => {
                 <LinkBtn to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}>
                   <Play size={22} text="Watch" />
                 </LinkBtn>
-                <Button onClick={getRandomFilm}>
+                <Button onClick={getRandomFilm} variant="primary">
                   <Refresh size={22} />
                 </Button>
               </div>
