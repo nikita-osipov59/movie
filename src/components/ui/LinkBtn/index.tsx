@@ -4,9 +4,9 @@ import { BtnLinkProps } from "./BtnLinkProps.props";
 
 import style from "./style.module.scss";
 
-export const LinkBtn: React.FC<BtnLinkProps> = ({ children, to }) => {
+export const LinkBtn: React.FC<BtnLinkProps> = ({ children, to, variant }) => {
   return (
-    <Link className={style.link} to={to}>
+    <Link className={style[`${variant}`]} to={to}>
       {children}
     </Link>
   );

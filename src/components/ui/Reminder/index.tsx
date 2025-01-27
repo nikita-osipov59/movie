@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-import { Button } from "@/components/ui";
+import { Button, LinkBtn } from "@/components/ui";
 
 import { ReminderProps } from "./ReminderProps.props";
 
@@ -18,7 +16,9 @@ export const Reminder: React.FC<ReminderProps> = ({ onClick, view }) => {
           </Button>
           <p className={style.reminder}>
             Have an account?
-            <Link to={ROUTER_PATH.AUTH}>Login</Link>
+            <LinkBtn to={ROUTER_PATH.AUTH} variant="default">
+              Login
+            </LinkBtn>
           </p>
         </>
       )}
@@ -29,7 +29,9 @@ export const Reminder: React.FC<ReminderProps> = ({ onClick, view }) => {
           </Button>
           <p className={style.reminder}>
             Dont have an account?
-            <Link to={ROUTER_PATH.REGISTRATION}>Registration</Link>
+            <LinkBtn to={ROUTER_PATH.REGISTRATION} variant="default">
+              Registration
+            </LinkBtn>
           </p>
         </>
       )}

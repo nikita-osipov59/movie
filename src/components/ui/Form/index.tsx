@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -11,6 +11,8 @@ import { getAuthStore } from "@/store";
 import { AuthService } from "@/services";
 
 import { Reminder } from "@/components/ui";
+
+import { NavLinkBtn } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -32,9 +34,13 @@ export const Form = () => {
       </div>
       <div className={style.box}>
         <div className={style.title}>
-          <NavLink to={ROUTER_PATH.REGISTRATION}>Registration</NavLink>
+          <NavLinkBtn to={ROUTER_PATH.REGISTRATION} variant="default">
+            Registration
+          </NavLinkBtn>
           <div>/</div>
-          <NavLink to={ROUTER_PATH.AUTH}>Login</NavLink>
+          <NavLinkBtn to={ROUTER_PATH.AUTH} variant="default">
+            Login
+          </NavLinkBtn>
         </div>
         <div className={style.mail}>
           <p>Email</p>

@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-
 import { ROUTER_PATH } from "@/router/PATH";
 
 import { Home } from "@/components/ui/svg";
+
+import { NavLinkBtn } from "@/components/ui/NavLinkBtn";
 
 import style from "./style.module.scss";
 
@@ -12,9 +12,9 @@ export const Header = () => {
       <nav>
         <ul className={style.list}>
           <li>
-            <NavLink to={ROUTER_PATH.HOME}>
+            <NavLinkBtn to={ROUTER_PATH.HOME} variant="default">
               <Home size={22} text="Home" />
-            </NavLink>
+            </NavLinkBtn>
           </li>
         </ul>
       </nav>

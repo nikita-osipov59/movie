@@ -38,7 +38,7 @@
   }
 }
 
-@mixin link {
+@mixin linkPrimary {
   padding: 15px;
   background-color: var(--color-primary);
   border-radius: 12px;
@@ -47,6 +47,14 @@
   &:hover {
     background-color: var(--color-primary);
     filter: brightness(0.8);
+  }
+}
+
+@mixin linkDefault {
+  color: var(--color-accent);
+  transition: $transition-default;
+  &:hover {
+    color: var(--color-hover);
   }
 }
 

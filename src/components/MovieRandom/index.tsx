@@ -42,7 +42,10 @@ export const MovieRandom = () => {
                 </ul>
               </div>
               <div className={style.buttonBox}>
-                <LinkBtn to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}>
+                <LinkBtn
+                  to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
+                  variant="primary"
+                >
                   <Play size={22} text="Watch" />
                 </LinkBtn>
                 <Button onClick={getRandomFilm} variant="primary">
