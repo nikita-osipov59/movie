@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -16,7 +17,7 @@ export const AuthService = () => {
 
   // const user = auth.currentUser;
 
-  const { setUser, setError, removeUser } = getAuthStore();
+  const { email, setUser, setError, removeUser } = getAuthStore();
 
   const handleLogin = (email: string, password: string) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -53,6 +54,19 @@ export const AuthService = () => {
       });
   };
 
+  const handleResetPassword = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        console.log("Смена пароля отправлена на почту");
+      })
+      .catch((error) => {
+        setError(error.code);
+        setTimeout(() => {
+          setError(null);
+        }, 5000);
+      });
+  };
+
   const handleSignOut = () => {
     signOut(auth);
     removeUser();
@@ -63,7 +77,6 @@ export const AuthService = () => {
     handleRegistration,
     handleLogin,
     handleSignOut,
+    handleResetPassword,
   };
 };
-
-//  TODO: как-то оптимизировать бы
