@@ -15,8 +15,12 @@ export const FormRecoveryPassword = () => {
 
   const { handleResetPassword } = AuthService();
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className={style.wrapper}>
+    <form onSubmit={handleSubmit} className={style.wrapper}>
       <div className={style.welcomeBox}>
         <p className={style.welcomeTitle}>
           Welcome to <span>IWatch</span>you can do more
@@ -43,11 +47,16 @@ export const FormRecoveryPassword = () => {
           </div>
           {error && <span className="error">{error}</span>}
         </div>
-        <Button onClick={handleResetPassword} width="100%" variant="primary">
+        <Button
+          onClick={handleResetPassword}
+          width="100%"
+          variant="primary"
+          type="submit"
+        >
           Send email
         </Button>
         <Reminder view="Remember" />
       </div>
-    </div>
+    </form>
   );
 };

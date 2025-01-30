@@ -25,6 +25,10 @@ export const Form = () => {
 
   const location = useLocation();
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={style.wrapper}>
       <div className={style.welcomeBox}>
@@ -32,7 +36,7 @@ export const Form = () => {
           Welcome to <span>IWatch</span>you can do more
         </p>
       </div>
-      <div className={style.box}>
+      <form onSubmit={handleSubmit} className={style.box}>
         <div className={style.title}>
           <NavLinkBtn to={ROUTER_PATH.REGISTRATION} variant="default">
             Registration
@@ -79,6 +83,7 @@ export const Form = () => {
               onClick={() => handleRegistration(email, password)}
               width="100%"
               variant="primary"
+              type="submit"
             >
               Registration
             </Button>
@@ -94,13 +99,14 @@ export const Form = () => {
               onClick={() => handleLogin(email, password)}
               width="100%"
               variant="primary"
+              type="submit"
             >
               Login
             </Button>
             <Reminder view="Login" />
           </>
         )}
-      </div>
+      </form>
     </div>
   );
 };
