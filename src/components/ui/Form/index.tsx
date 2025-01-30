@@ -10,7 +10,7 @@ import { getAuthStore } from "@/store";
 
 import { AuthService } from "@/services";
 
-import { Reminder } from "@/components/ui";
+import { Button, Reminder } from "@/components/ui";
 
 import { NavLinkBtn } from "@/components/ui";
 
@@ -29,7 +29,7 @@ export const Form = () => {
     <div className={style.wrapper}>
       <div className={style.welcomeBox}>
         <p className={style.welcomeTitle}>
-          Welcome to <span>movie</span>you can do more
+          Welcome to <span>IWatch</span>you can do more
         </p>
       </div>
       <div className={style.box}>
@@ -42,43 +42,63 @@ export const Form = () => {
             Login
           </NavLinkBtn>
         </div>
-        <div className={style.mail}>
-          <p>Email</p>
-          <label htmlFor="mail-input">
-            <Mail size={22} />
-          </label>
-          <input
-            className={style.input}
-            id="mail-input"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="example@gmail.ru"
-          />
+        <div className={style.content}>
+          <div className={style.mail}>
+            <p>Email</p>
+            <label htmlFor="mail-input">
+              <Mail size={22} />
+            </label>
+            <input
+              className={style.input}
+              id="mail-input"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="example@gmail.ru"
+            />
+          </div>
+          <div className={style.lock}>
+            <p>Password</p>
+            <label htmlFor="password-input">
+              <Lock size={22} />
+            </label>
+            <input
+              className={style.input}
+              id="password-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="password"
+            />
+          </div>
+          {error && <span className="error">{error}</span>}
         </div>
-        <div className={style.lock}>
-          <p>Password</p>
-          <label htmlFor="password-input">
-            <Lock size={22} />
-          </label>
-          <input
-            className={style.input}
-            id="password-input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="password"
-          />
-        </div>
-        {error && <span className="error">{error}</span>}
         {location.pathname === ROUTER_PATH.REGISTRATION && (
-          <Reminder
-            view="Registration"
-            onClick={() => handleRegistration(email, password)}
-          />
+          <>
+            <Button
+              onClick={() => handleRegistration(email, password)}
+              width="100%"
+              variant="primary"
+            >
+              Registration
+            </Button>
+            <Reminder view="Registration" />
+          </>
         )}
         {location.pathname === ROUTER_PATH.AUTH && (
-          <Reminder view="Login" onClick={() => handleLogin(email, password)} />
+          <>
+            <div className={style.forgotBox}>
+              <Reminder view="Forgot" />
+            </div>
+            <Button
+              onClick={() => handleLogin(email, password)}
+              width="100%"
+              variant="primary"
+            >
+              Login
+            </Button>
+            <Reminder view="Login" />
+          </>
         )}
       </div>
     </div>

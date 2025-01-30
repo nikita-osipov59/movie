@@ -25,6 +25,19 @@ export const Reminder: React.FC<ReminderProps> = ({ view }) => {
           </LinkBtn>
         </p>
       )}
+      {view === "Remember" && (
+        <p className={style.reminder}>
+          Remember password?
+          <LinkBtn to={ROUTER_PATH.AUTH} variant="default">
+            Login
+          </LinkBtn>
+        </p>
+      )}
+      {view === "Forgot" && (
+        <LinkBtn to={ROUTER_PATH.RECOVERYPASSWORD} variant="default">
+          Forgot password?
+        </LinkBtn>
+      )}
     </>
   );
 };
