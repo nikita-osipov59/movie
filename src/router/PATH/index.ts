@@ -5,5 +5,6 @@ export const ROUTER_PATH = {
   MOVIE: "/movie",
   PROFILE: "/profile",
   SEARCH: "/search",
+  RECOVERYPASSWORD: "/recovery",
   NOTFOUNDPAGE: "*",
 };

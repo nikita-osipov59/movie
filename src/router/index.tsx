@@ -8,6 +8,7 @@ import {
   MoviePage,
   NotFoundPage,
   ProfilePage,
+  RecoveryPasswordPage,
   RegistrationPage,
   SearchPage,
 } from "@/pages";
@@ -25,6 +26,10 @@ export const Router = () => {
       </Route>
       <Route path={ROUTER_PATH.REGISTRATION} element={<RegistrationPage />} />
       <Route path={ROUTER_PATH.AUTH} element={<AuthPage />} />
+      <Route
+        path={ROUTER_PATH.RECOVERYPASSWORD}
+        element={<RecoveryPasswordPage />}
+      />
       <Route path={ROUTER_PATH.NOTFOUNDPAGE} element={<NotFoundPage />} />
     </Routes>
   );
