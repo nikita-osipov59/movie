@@ -9,21 +9,13 @@ import { ROUTER_PATH } from "@/router/PATH";
 import style from "./style.module.scss";
 
 export const UserPanel = () => {
-  const { name, email } = getAuthStore();
+  const { name, email, id } = getAuthStore();
 
   return (
     <div>
-      <Link to={ROUTER_PATH.PROFILE} className={style.user}>
-        {name ? (
-          <img
-            className={style.avatar}
-            src="https://i.pinimg.com/originals/24/ac/ef/24acef8b3a6a45d7239480bcc4ff0193.jpg"
-            alt={name}
-          />
-        ) : (
-          <User size={32} />
-        )}
-        <div>{name ? name : email}</div>
+      <Link to={ROUTER_PATH.PROFILE + `/${id}`} className={style.user}>
+        <User size={32} />
+        <p>{name ? name : email}</p>
       </Link>
     </div>
   );
