@@ -52,21 +52,33 @@
       width: -webkit-fill-available;
       @include border;
       padding-left: 45px;
+      padding-right: 45px;
+      width: 100%;
       &:focus-within {
         border: 1px solid var(--color-focus);
       }
     }
     .mail,
-    .lock {
+    .password {
       position: relative;
-      svg {
+      .mail,
+      .lock {
         position: absolute;
         bottom: 15px;
         left: 15px;
         cursor: text;
         color: var(--color-accent);
       }
+      .EyeOff,
+      .Eye {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        cursor: pointer;
+        color: var(--color-accent);
+      }
     }
+
     .forgotBox {
       text-align: end;
     }

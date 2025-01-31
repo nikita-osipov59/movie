@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { Mail, Lock } from "@/components/ui/svg";
+import { Mail, Lock, Eye, EyeOff } from "@/components/ui/svg";
 
 import { getAuthStore } from "@/store";
 
@@ -22,6 +22,7 @@ export const Form = () => {
   const { handleLogin, handleRegistration } = AuthService();
 
   const [password, setPassword] = useState("");
+  const [isShow, setIsShow] = useState(false);
 
   const location = useLocation();
 
@@ -49,7 +50,7 @@ export const Form = () => {
         <div className={style.content}>
           <div className={style.mail}>
             <p>Email</p>
-            <label htmlFor="mail-input">
+            <label htmlFor="mail-input" className={style.mail}>
               <Mail size={22} />
             </label>
             <input
@@ -61,20 +62,38 @@ export const Form = () => {
               placeholder="example@gmail.ru"
             />
           </div>
-          <div className={style.lock}>
+          <div className={style.password}>
             <p>Password</p>
-            <label htmlFor="password-input">
+            <label htmlFor="password-input" className={style.lock}>
               <Lock size={22} />
             </label>
             <input
               className={style.input}
               id="password-input"
-              type="password"
+              type={isShow ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="password"
             />
+            {isShow ? (
+              <label
+                onClick={() => setIsShow(!isShow)}
+                htmlFor="password-input"
+                className={style.Eye}
+              >
+                <EyeOff size={22} />
+              </label>
+            ) : (
+              <label
+                onClick={() => setIsShow(!isShow)}
+                htmlFor="password-input"
+                className={style.EyeOff}
+              >
+                <Eye size={22} />
+              </label>
+            )}
           </div>
+
           {error && <span className="error">{error}</span>}
         </div>
         {location.pathname === ROUTER_PATH.REGISTRATION && (
