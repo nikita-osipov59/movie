@@ -2,7 +2,12 @@ import { Navigate, Outlet } from "react-router-dom";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { AsidePanel, Container, Search } from "@/components/ui";
+import {
+  AsidePanel,
+  Container,
+  NotificationPanel,
+  Search,
+} from "@/components/ui";
 
 import { getAuthStore } from "@/store";
 
@@ -23,7 +28,10 @@ export const PrivateRoute = () => {
         <AsidePanel />
         <div className={style.box}>
           <div className={style.bar}>
-            <Search />
+            <div className={style.content}>
+              <Search />
+              <NotificationPanel />
+            </div>
             <UserPanel />
           </div>
           <Outlet />

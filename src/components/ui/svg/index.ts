@@ -9,4 +9,6 @@ export * from "./Mail";
 export * from "./Lock";
 export * from "./User";
 export * from "./Eye";
+export * from "./Notification";
+export * from "./NotificationHas";
 export * from "./EyeOff";

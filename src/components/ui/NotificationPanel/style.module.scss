@@ -1,0 +1,20 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.box {
+  position: relative;
+  height: 25px;
+}
+
+.open {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 3;
+  left: -225px;
+  width: 250px;
+  text-align: center;
+  @include border;
+}
