@@ -8,7 +8,7 @@ import style from "./style.module.scss";
 
 export const NotificationPanel = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isHas, setIsHas] = useState<boolean>(false);
+  const isHas = false;
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -28,7 +28,7 @@ export const NotificationPanel = () => {
     <div ref={menuRef} className={style.box}>
       <Button onClick={() => setIsOpen(!isOpen)} variant="default">
         {isHas ? (
-          <NotificationHas active={isOpen && true} color="#f50" size={25} />
+          <NotificationHas active={isOpen && true} color="#f50" size={22} />
         ) : (
           <Notification active={isOpen && true} size={22} />
         )}
