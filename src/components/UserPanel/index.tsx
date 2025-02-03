@@ -12,9 +12,9 @@ export const UserPanel = () => {
   const { name, email, id } = getAuthStore();
 
   return (
-    <div>
+    <div className={style.userPanel}>
       <Link to={ROUTER_PATH.PROFILE + `/${id}`} className={style.user}>
-        <User size={32} />
+        <User />
         <p>{name ? name : email}</p>
       </Link>
     </div>
