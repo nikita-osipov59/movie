@@ -46,10 +46,10 @@ export const MovieRandom = () => {
                   to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
                   variant="primary"
                 >
-                  <Play size={22} text="Watch" />
+                  <Play text="Watch" />
                 </LinkBtn>
                 <Button onClick={getRandomFilm} variant="primary">
-                  <Refresh size={22} />
+                  <Refresh />
                 </Button>
               </div>
             </div>

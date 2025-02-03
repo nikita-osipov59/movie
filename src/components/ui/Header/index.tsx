@@ -13,7 +13,7 @@ export const Header = () => {
         <ul className={style.list}>
           <li>
             <NavLinkBtn to={ROUTER_PATH.HOME} variant="default">
-              <Home size={22} text="Home" />
+              <Home text="Home" />
             </NavLinkBtn>
           </li>
         </ul>

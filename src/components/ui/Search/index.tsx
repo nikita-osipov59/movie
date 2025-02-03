@@ -31,7 +31,7 @@ export const Search = () => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button className={style.submit} type="submit">
-        <Next size={22} />
+        <Next />
       </button>
     </form>
   );

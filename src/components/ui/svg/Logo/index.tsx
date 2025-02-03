@@ -6,7 +6,7 @@ import { ROUTER_PATH } from "@/router/PATH";
 
 import style from "./style.module.scss";
 
-export const Logo = ({ text, size }: svgSize) => {
+export const Logo = ({ text, size = 22 }: svgSize) => {
   return (
     <Link to={ROUTER_PATH.HOME} className={style.box}>
       <svg

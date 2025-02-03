@@ -28,9 +28,9 @@ export const NotificationPanel = () => {
     <div ref={menuRef} className={style.box}>
       <Button onClick={() => setIsOpen(!isOpen)} variant="default">
         {isHas ? (
-          <NotificationHas active={isOpen && true} color="#f50" size={22} />
+          <NotificationHas active={isOpen && true} color="#f50" />
         ) : (
-          <Notification active={isOpen && true} size={22} />
+          <Notification active={isOpen && true} />
         )}
       </Button>
       {isOpen &&

@@ -1,6 +1,6 @@
 export interface svgSize {
   text?: string;
-  size: number;
+  size?: number;
   color?: string;
   active?: boolean;
 }

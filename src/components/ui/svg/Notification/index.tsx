@@ -2,7 +2,7 @@ import { svgSize } from "@/utils/interfaces";
 
 import style from "./style.module.scss";
 
-export const Notification = ({ text, size, active = false }: svgSize) => {
+export const Notification = ({ text, size = 22, active = false }: svgSize) => {
   return (
     <div className={`${active && "active"} ${style.box}`}>
       <svg

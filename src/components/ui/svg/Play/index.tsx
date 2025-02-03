@@ -2,7 +2,7 @@ import { svgSize } from "@/utils/interfaces";
 
 import style from "./style.module.scss";
 
-export const Play = ({ text, size }: svgSize) => {
+export const Play = ({ text, size = 22 }: svgSize) => {
   return (
     <div className={style.box}>
       <svg

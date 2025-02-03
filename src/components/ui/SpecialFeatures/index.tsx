@@ -16,10 +16,10 @@ export const SpecialFeatures = () => {
   return (
     <div className={style.box}>
       <Button onClick={switchTheme} variant="default">
-        <Theme size={22} text="Theme" />
+        <Theme text="Theme" />
       </Button>
       <Button onClick={handleSignOut} variant="default">
-        <LogOut size={22} text="Log Out" />
+        <LogOut text="Log Out" />
       </Button>
     </div>
   );

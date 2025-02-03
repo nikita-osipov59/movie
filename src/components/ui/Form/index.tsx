@@ -51,7 +51,7 @@ export const Form = () => {
           <div className={style.mail}>
             <p>Email</p>
             <label htmlFor="mail-input" className={style.mail}>
-              <Mail size={22} />
+              <Mail />
             </label>
             <input
               className={style.input}
@@ -65,7 +65,7 @@ export const Form = () => {
           <div className={style.password}>
             <p>Password</p>
             <label htmlFor="password-input" className={style.lock}>
-              <Lock size={22} />
+              <Lock />
             </label>
             <input
               className={style.input}
@@ -81,7 +81,7 @@ export const Form = () => {
                 htmlFor="password-input"
                 className={style.Eye}
               >
-                <EyeOff size={22} />
+                <EyeOff />
               </label>
             ) : (
               <label
@@ -89,7 +89,7 @@ export const Form = () => {
                 htmlFor="password-input"
                 className={style.EyeOff}
               >
-                <Eye size={22} />
+                <Eye />
               </label>
             )}
           </div>

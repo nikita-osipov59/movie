@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 
 export const NotificationHas = ({
   text,
-  size,
+  size = 22,
   color,
   active = false,
 }: svgSize) => {
