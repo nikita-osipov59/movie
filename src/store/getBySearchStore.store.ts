@@ -50,22 +50,21 @@ export interface State {
   getMovieBySearch: (value: string) => Promise<void>;
   setInputValue: (value: string) => void;
   inputValue: string;
-  data?: Data;
+  data: Data[] | null;
 }
 
 export const getBySearchStore = create<State>()(
   persist(
     (set) => ({
-      data: undefined,
+      data: null,
       inputValue: "",
       getMovieBySearch: async (value) => {
         try {
           const response = await apiBase.get(
             `movie/search?page=1&limit=10&query=${value}`
           );
-
-          set(() => ({ data: response.data }));
           set(() => ({ inputValue: value }));
+          return response.data;
         } catch (error) {
           console.error("Error fetching history:", error);
         }

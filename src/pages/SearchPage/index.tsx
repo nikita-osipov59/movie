@@ -1,14 +1,22 @@
 import { BorderPanel, List } from "@/components/ui";
 
-import { getBySearchStore } from "@/store";
+import { useGetQueryMovieBySearch } from "@/hooks";
 
 export const SearchPage = () => {
-  const { data } = getBySearchStore();
+  const { data, isLoading, isError } = useGetQueryMovieBySearch();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Увы, мы ничего не нашли, попробуйте изменить запрос.</div>;
+  }
 
   return (
     <section>
       <BorderPanel title="Query">
-        <List data={data} />
+        <List data={data!} />
       </BorderPanel>
     </section>
   );

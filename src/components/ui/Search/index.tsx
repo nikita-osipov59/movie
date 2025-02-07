@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 import { getBySearchStore } from "@/store";
 
+import { useGetMutatinMovieBySearch } from "@/hooks";
+
 import { ROUTER_PATH } from "@/router/PATH";
 
 import { Next } from "@/components/ui/svg";
@@ -9,15 +11,16 @@ import { Next } from "@/components/ui/svg";
 import style from "./style.module.scss";
 
 export const Search = () => {
-  const navigate = useNavigate();
+  const { inputValue, setInputValue } = getBySearchStore();
+  const { mutate } = useGetMutatinMovieBySearch();
 
-  const { getMovieBySearch, inputValue, setInputValue } = getBySearchStore();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue) {
-      getMovieBySearch(inputValue);
       navigate(ROUTER_PATH.SEARCH);
+      mutate();
     }
   };
 
