@@ -4,11 +4,11 @@ import { useState } from "react";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { Mail, Lock, Eye, EyeOff } from "@/components/ui/svg";
-
 import { getAuthStore } from "@/store";
 
 import { AuthService } from "@/services";
+
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 
 import { Button, Reminder } from "@/components/ui";
 
@@ -51,7 +51,7 @@ export const Form = () => {
           <div className={style.mail}>
             <p>Email</p>
             <label htmlFor="mail-input" className={style.mail}>
-              <Mail />
+              <Mail size={22} />
             </label>
             <input
               className={style.input}
@@ -65,7 +65,7 @@ export const Form = () => {
           <div className={style.password}>
             <p>Password</p>
             <label htmlFor="password-input" className={style.lock}>
-              <Lock />
+              <Lock size={22} />
             </label>
             <input
               className={style.input}
@@ -81,7 +81,7 @@ export const Form = () => {
                 htmlFor="password-input"
                 className={style.Eye}
               >
-                <EyeOff />
+                <EyeOff size={22} />
               </label>
             ) : (
               <label
@@ -89,7 +89,7 @@ export const Form = () => {
                 htmlFor="password-input"
                 className={style.EyeOff}
               >
-                <Eye />
+                <Eye size={22} />
               </label>
             )}
           </div>

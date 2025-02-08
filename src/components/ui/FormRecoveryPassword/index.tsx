@@ -1,4 +1,4 @@
-import { Mail } from "@/components/ui/svg";
+import { Mail } from "lucide-react";
 
 import { getAuthStore } from "@/store";
 
@@ -34,7 +34,7 @@ export const FormRecoveryPassword = () => {
           <div className={style.mail}>
             <p>Email</p>
             <label htmlFor="mail-input">
-              <Mail size={22} />
+              <Mail />
             </label>
             <input
               className={style.input}

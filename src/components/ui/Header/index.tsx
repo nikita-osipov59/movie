@@ -1,8 +1,8 @@
+import { Home } from "lucide-react";
+
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { Home } from "@/components/ui/svg";
-
-import { NavLinkBtn } from "@/components/ui/NavLinkBtn";
+import { NavLinkBtn } from "@/components/ui";
 
 import style from "./style.module.scss";
 
@@ -13,7 +13,10 @@ export const Header = () => {
         <ul className={style.list}>
           <li>
             <NavLinkBtn to={ROUTER_PATH.HOME} variant="default">
-              <Home text="Home" />
+              <div className={style.item}>
+                <Home size={22} />
+                <div className={style.dots}>Home</div>
+              </div>
             </NavLinkBtn>
           </li>
         </ul>

@@ -1,12 +1,11 @@
 import { useEffect } from "react";
+import { Play, RefreshCcw } from "lucide-react";
 
 import { getRandomStore } from "@/store";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
 import { BorderPanel, Button, LinkBtn } from "@/components/ui";
-
-import { Play, Refresh } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
 
@@ -46,10 +45,10 @@ export const MovieRandom = () => {
                   to={ROUTER_PATH.MOVIE + `/${randomFilm.id}`}
                   variant="primary"
                 >
-                  <Play text="Watch" />
+                  <Play />
                 </LinkBtn>
                 <Button onClick={getRandomFilm} variant="primary">
-                  <Refresh />
+                  <RefreshCcw />
                 </Button>
               </div>
             </div>

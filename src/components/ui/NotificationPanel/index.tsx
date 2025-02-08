@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { Notification, NotificationHas } from "@/components/ui/svg";
+import { Bell, BellDot } from "lucide-react";
 
 import { Button } from "@/components/ui";
 
@@ -28,9 +28,14 @@ export const NotificationPanel = () => {
     <div ref={menuRef} className={style.box}>
       <Button onClick={() => setIsOpen(!isOpen)} variant="default">
         {isHas ? (
-          <NotificationHas active={isOpen && true} color="#f50" />
+          <BellDot
+            className={
+              isHas ? `${style.BellDot} ${isOpen ? "active" : ""}` : ""
+            }
+            size={22}
+          />
         ) : (
-          <Notification active={isOpen && true} />
+          <Bell className={isOpen ? "active" : ""} size={22} />
         )}
       </Button>
       {isOpen &&
@@ -38,7 +43,7 @@ export const NotificationPanel = () => {
           <div className={style.open}>есть</div>
         ) : (
           <div className={style.open}>
-            <Notification size={50} />В этом разделе будут собраны уведомления о
+            <Bell size={50} /> В этом разделе будут собраны уведомления о
             каналах, на которые вы подписаны.
           </div>
         ))}

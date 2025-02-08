@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import { getBySearchStore } from "@/store";
@@ -5,8 +6,6 @@ import { getBySearchStore } from "@/store";
 import { useGetMutatinMovieBySearch } from "@/hooks";
 
 import { ROUTER_PATH } from "@/router/PATH";
-
-import { Next } from "@/components/ui/svg";
 
 import style from "./style.module.scss";
 
@@ -34,7 +33,7 @@ export const Search = () => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button className={style.submit} type="submit">
-        <Next />
+        <ArrowRight size={22} />
       </button>
     </form>
   );

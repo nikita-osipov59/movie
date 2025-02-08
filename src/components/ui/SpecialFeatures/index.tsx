@@ -1,4 +1,4 @@
-import { LogOut, Theme } from "@/components/ui/svg";
+import { LogOutIcon, SunMoon } from "lucide-react";
 
 import { themeStore } from "@/store";
 
@@ -16,10 +16,16 @@ export const SpecialFeatures = () => {
   return (
     <div className={style.box}>
       <Button onClick={switchTheme} variant="default">
-        <Theme text="Theme" />
+        <div className={style.text}>
+          <SunMoon size={22} />
+          Theme
+        </div>
       </Button>
       <Button onClick={handleSignOut} variant="default">
-        <LogOut text="Log Out" />
+        <div className={style.text}>
+          <LogOutIcon size={22} />
+          LogOut
+        </div>
       </Button>
     </div>
   );

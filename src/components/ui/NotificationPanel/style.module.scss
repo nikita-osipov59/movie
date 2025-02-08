@@ -3,7 +3,7 @@
 
 .box {
   position: relative;
-  height: 25px;
+  height: 22px;
 }
 
 .open {
@@ -17,4 +17,10 @@
   width: 250px;
   text-align: center;
   @include border;
+}
+
+.BellDot {
+  circle {
+    color: var(--color-primary);
+  }
 }

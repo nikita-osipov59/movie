@@ -57,3 +57,7 @@ a {
 .error {
   color: $color-error;
 }
+
+svg {
+  transition: $transition-default;
+}

@@ -1,15 +1,5 @@
 @import "@/styles/variables.scss";
 
-@mixin svgBox {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: $transition-default;
-  svg {
-    transition: $transition-default;
-  }
-}
-
 @mixin border {
   background-color: var(--color-bg-info);
   border: 1px solid var(--color-border);

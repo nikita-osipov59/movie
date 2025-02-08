@@ -1,12 +1,11 @@
-import { Header, SpecialFeatures } from "@/components/ui";
-import { Logo } from "@/components/ui/svg";
+import { Header, Logo, SpecialFeatures } from "@/components/ui";
 
 import style from "./style.module.scss";
 
 export const AsidePanel = () => {
   return (
     <aside className={style.aside}>
-      <Logo size={32} text="Movie" />
+      <Logo />
       <Header />
       <SpecialFeatures />
     </aside>
