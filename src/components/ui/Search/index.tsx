@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { getBySearchStore } from "@/store";
 
-import { useGetMutatinMovieBySearch } from "@/hooks";
+import { useGetMutationMovieBySearch } from "@/hooks";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
@@ -11,7 +11,7 @@ import style from "./style.module.scss";
 
 export const Search = () => {
   const { inputValue, setInputValue } = getBySearchStore();
-  const { mutate } = useGetMutatinMovieBySearch();
+  const { mutate } = useGetMutationMovieBySearch();
 
   const navigate = useNavigate();
 

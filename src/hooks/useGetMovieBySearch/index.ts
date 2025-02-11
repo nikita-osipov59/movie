@@ -13,7 +13,7 @@ export const useGetQueryMovieBySearch = () => {
   });
 };
 
-export const useGetMutatinMovieBySearch = () => {
+export const useGetMutationMovieBySearch = () => {
   const { getMovieBySearch, inputValue } = getBySearchStore();
 
   return useMutation({
