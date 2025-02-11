@@ -63,7 +63,7 @@ export const getBySearchStore = create<State>()(
           const response = await apiBase.get(
             `movie/search?page=1&limit=10&query=${value}`
           );
-          set(() => ({ inputValue: value }));
+          set(() => ({ data: response.data }));
           return response.data;
         } catch (error) {
           console.error("Error fetching history:", error);
