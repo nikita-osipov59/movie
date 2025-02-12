@@ -34,7 +34,7 @@ export const FormRecoveryPassword = () => {
           <div className={style.mail}>
             <p>Email</p>
             <label htmlFor="mail-input">
-              <Mail />
+              <Mail size={22} />
             </label>
             <input
               className={style.input}
