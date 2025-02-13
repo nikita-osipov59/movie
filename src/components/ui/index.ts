@@ -11,5 +11,6 @@ export * from "./Button";
 export * from "./LinkBtn";
 export * from "./NavLinkBtn";
 export * from "./Reminder";
+export * from "./Loading";
 export * from "./FormRecoveryPassword";
 export * from "./NotificationPanel";

@@ -4,17 +4,13 @@ import { useGetMutationRandomMovie, useGetQueryRandomMovie } from "@/hooks";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { BorderPanel, Button, LinkBtn } from "@/components/ui";
+import { BorderPanel, Button, LinkBtn, Loading } from "@/components/ui";
 
 import style from "./style.module.scss";
 
 export const MovieRandom = () => {
-  const { data, isLoading, isError } = useGetQueryRandomMovie();
+  const { data, isError } = useGetQueryRandomMovie();
   const { mutate, isPending } = useGetMutationRandomMovie();
-
-  if (isLoading || isPending) {
-    return <div>Loading...</div>;
-  }
 
   if (isError) {
     return <div>Увы, мы ничего не нашли</div>;
@@ -47,7 +43,11 @@ export const MovieRandom = () => {
                   <Play />
                 </LinkBtn>
                 <Button onClick={() => mutate()} variant="primary">
-                  <RefreshCcw />
+                  {isPending ? (
+                    <Loading color="white" size={30} />
+                  ) : (
+                    <RefreshCcw />
+                  )}
                 </Button>
               </div>
             </div>
