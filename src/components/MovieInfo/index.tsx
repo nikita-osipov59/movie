@@ -1,6 +1,3 @@
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-
 import { getFilmByIdStore } from "@/store";
 
 import { MovieCast, MovieInfoPanel, MovieSimilars } from "@/components/";
@@ -9,15 +6,8 @@ import { BorderPanel } from "@/components/ui";
 import style from "./style.module.scss";
 
 export const MovieInfo = () => {
-  const { filmById, getFilmById } = getFilmByIdStore();
+  const { filmById } = getFilmByIdStore();
 
-  const { id } = useParams<{ id: string }>();
-  console.log(filmById);
-  useEffect(() => {
-    if (id) {
-      getFilmById(id);
-    }
-  }, [id]);
   return (
     <div className={style.box}>
       <BorderPanel>
