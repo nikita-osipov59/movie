@@ -9,12 +9,16 @@ import { ROUTER_PATH } from "@/router/PATH";
 import style from "./style.module.scss";
 
 export const UserPanel = () => {
-  const { name, email, id } = getAuthStore();
+  const { name, email, photoURL, id } = getAuthStore();
 
   return (
     <div className={style.userPanel}>
       <Link to={ROUTER_PATH.PROFILE + `/${id}`} className={style.user}>
-        <CircleUserRound size={32} />
+        {photoURL ? (
+          <img className={style.avatar} src={photoURL} alt="avatar" />
+        ) : (
+          <CircleUserRound size={32} />
+        )}
         <p>{name ? name : email}</p>
       </Link>
     </div>

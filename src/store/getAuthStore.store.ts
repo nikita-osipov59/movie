@@ -2,7 +2,12 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface User {
-  setUser: (value: { id: string; email: string; name?: string | null }) => void;
+  setUser: (value: {
+    id: string;
+    email: string;
+    name?: string | null;
+    photoURL?: string | null;
+  }) => void;
   setEmail: (email: string) => void;
   setError: (error: string | null) => void;
   removeUser: () => void;
@@ -10,6 +15,7 @@ interface User {
   email: string;
   id: string | null;
   name: string | null;
+  photoURL: string | null;
   error: string | null;
 }
 
@@ -26,8 +32,8 @@ export const getAuthStore = create<User>()(
       name: null,
       photoURL: null,
       error: null,
-      setUser: ({ id, email, name }) => {
-        set(() => ({ id: id, email: email, name: name }));
+      setUser: ({ id, email, name, photoURL }) => {
+        set(() => ({ id: id, email: email, name: name, photoURL: photoURL }));
         set(() => ({ isAuth: true }));
       },
       setEmail: (email) => {

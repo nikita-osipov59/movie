@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
@@ -26,6 +27,7 @@ export const AuthService = () => {
           email: user.email!,
           id: user.uid,
           name: user.displayName,
+          photoURL: user.photoURL,
         });
         navigate(ROUTER_PATH.HOME);
       })
@@ -66,6 +68,14 @@ export const AuthService = () => {
         }, 5000);
       });
   };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+    } else {
+      console.log("Статус: пользователь не авторизован");
+    }
+  });
 
   const handleSignOut = () => {
     signOut(auth);
