@@ -1,0 +1,59 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .userBox {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 0px 0px 0px 25px;
+    z-index: 2;
+  }
+  .avatar {
+    img,
+    svg {
+      border: 3px solid $color-online; // зависит от онлайн/оффлайн/отошел
+      transition: $transition-default;
+      border-radius: 50%;
+      max-width: 150px;
+      height: 150px;
+      padding: 5px;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .title {
+        font-size: $fontSize-large;
+        line-height: 1;
+      }
+      .additionalInfo {
+        display: flex;
+        gap: 5px;
+      }
+      .followers {
+        display: flex;
+        gap: 5px;
+      }
+      .description {
+        color: var(--color-accent);
+        font-size: $fontSize-default;
+      }
+    }
+  }
+  .poster {
+    height: 250px;
+    z-index: 1;
+    border-radius: 11px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
