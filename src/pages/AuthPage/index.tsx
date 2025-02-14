@@ -2,7 +2,7 @@ import { BorderPanel, Container, Form } from "@/components/ui";
 
 import style from "./style.module.scss";
 
-export const AuthPage = () => {
+const AuthPage = () => {
   return (
     <section>
       <Container>
@@ -15,3 +15,5 @@ export const AuthPage = () => {
     </section>
   );
 };
+
+export default AuthPage;

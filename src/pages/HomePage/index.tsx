@@ -1,6 +1,6 @@
 import { MovieRandom } from "@/components";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <section>
@@ -9,3 +9,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

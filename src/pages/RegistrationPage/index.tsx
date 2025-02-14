@@ -2,7 +2,7 @@ import { BorderPanel, Container, Form } from "@/components/ui";
 
 import style from "./style.module.scss";
 
-export const RegistrationPage = () => {
+const RegistrationPage = () => {
   return (
     <section>
       <Container>
@@ -15,3 +15,4 @@ export const RegistrationPage = () => {
     </section>
   );
 };
+export default RegistrationPage;

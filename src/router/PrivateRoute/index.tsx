@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 import { ROUTER_PATH } from "@/router/PATH";
@@ -5,6 +6,7 @@ import { ROUTER_PATH } from "@/router/PATH";
 import {
   AsidePanel,
   Container,
+  Loading,
   NotificationPanel,
   Search,
 } from "@/components/ui";
@@ -34,7 +36,9 @@ export const PrivateRoute = () => {
             </div>
             <UserPanel />
           </div>
-          <Outlet />
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
         </div>
       </Container>
     )

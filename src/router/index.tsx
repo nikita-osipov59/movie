@@ -1,19 +1,18 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { ROUTER_PATH } from "@/router/PATH/";
 
-import {
-  AuthPage,
-  HomePage,
-  MoviePage,
-  NotFoundPage,
-  ProfilePage,
-  RecoveryPasswordPage,
-  RegistrationPage,
-  SearchPage,
-} from "@/pages";
-
 import { PrivateRoute } from "./PrivateRoute";
+
+const AuthPage = lazy(() => import("@/pages/AuthPage"));
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const MoviePage = lazy(() => import("@/pages/MoviePage"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
+const RecoveryPasswordPage = lazy(() => import("@/pages/RecoveryPasswordPage"));
+const RegistrationPage = lazy(() => import("@/pages/RegistrationPage"));
+const SearchPage = lazy(() => import("@/pages/SearchPage"));
+const ProfilePage = lazy(() => import("@/pages/ProfilePage"));
 
 export const Router = () => {
   return (

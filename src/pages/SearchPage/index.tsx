@@ -2,12 +2,8 @@ import { BorderPanel, List } from "@/components/ui";
 
 import { useGetQueryMovieBySearch } from "@/hooks";
 
-export const SearchPage = () => {
-  const { data, isLoading, isError } = useGetQueryMovieBySearch();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+const SearchPage = () => {
+  const { data, isError } = useGetQueryMovieBySearch();
 
   if (isError) {
     return <div>Увы, мы ничего не нашли, попробуйте изменить запрос.</div>;
@@ -21,3 +17,4 @@ export const SearchPage = () => {
     </section>
   );
 };
+export default SearchPage;

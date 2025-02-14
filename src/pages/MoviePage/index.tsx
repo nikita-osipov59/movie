@@ -5,7 +5,7 @@ import { getFilmByIdStore } from "@/store";
 
 import { MovieInfo } from "@/components/";
 
-export const MoviePage = () => {
+const MoviePage = () => {
   const { filmById, getFilmById } = getFilmByIdStore();
 
   const { id } = useParams<{ id: string }>();
@@ -21,3 +21,5 @@ export const MoviePage = () => {
     </section>
   );
 };
+
+export default MoviePage;
