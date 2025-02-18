@@ -1,28 +1,30 @@
-import { getFilmByIdStore } from "@/store";
-
 import { MovieCast, MovieInfoPanel, MovieSimilars } from "@/components/";
 import { BorderPanel } from "@/components/ui";
 
 import style from "./style.module.scss";
+import { useParams } from "react-router-dom";
+import { useGetQueryMovieById } from "@/hooks";
 
 export const MovieInfo = () => {
-  const { filmById } = getFilmByIdStore();
+  const { id } = useParams();
+
+  const { data } = useGetQueryMovieById(id!);
 
   return (
     <div className={style.box}>
       <BorderPanel>
         <img
           className={style.backdrop}
-          src={filmById?.backdrop.url}
-          alt={filmById?.name}
+          src={data?.backdrop.url}
+          alt={data?.name}
         />
-        <p className={style.title}>{filmById?.name}</p>
+        <p className={style.title}>{data?.name}</p>
       </BorderPanel>
       <div className={style.info}>
         <div className={style.column}>
-          <BorderPanel title="Description">{filmById?.description}</BorderPanel>
+          <BorderPanel title="Description">{data?.description}</BorderPanel>
           <MovieCast />
-          {filmById?.similarMovies && filmById?.similarMovies?.length > 0 && (
+          {data?.similarMovies && data?.similarMovies?.length > 0 && (
             <MovieSimilars />
           )}
         </div>
