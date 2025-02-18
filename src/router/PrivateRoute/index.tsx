@@ -36,7 +36,13 @@ export const PrivateRoute = () => {
             </div>
             <UserPanel />
           </div>
-          <Suspense fallback={<Loading />}>
+          <Suspense
+            fallback={
+              <div className={style.loader}>
+                <Loading />
+              </div>
+            }
+          >
             <Outlet />
           </Suspense>
         </div>
