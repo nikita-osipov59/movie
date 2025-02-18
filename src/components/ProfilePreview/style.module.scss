@@ -31,6 +31,9 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      button {
+        height: 54px;
+      }
       .title {
         font-size: $fontSize-large;
         line-height: 1;
