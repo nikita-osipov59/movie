@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
-import { Data } from "@/store";
+import { DataDocs } from "@/store";
 
 import style from "./style.module.scss";
 
 interface ListProps {
-  data: Data;
+  data: DataDocs;
 }
 
 export const List: React.FC<ListProps> = ({ data }) => {

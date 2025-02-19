@@ -42,7 +42,7 @@ interface Movie {
   similarMovies?: SimilarMovie[];
 }
 
-export interface Data {
+export interface DataDocs {
   docs: Movie[];
 }
 
@@ -50,7 +50,7 @@ export interface State {
   getMovieBySearch: (value: string) => Promise<void>;
   setInputValue: (value: string) => void;
   inputValue: string;
-  data: Data[] | null;
+  data: DataDocs[] | null;
 }
 
 export const getBySearchStore = create<State>()(
