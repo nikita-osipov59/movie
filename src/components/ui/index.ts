@@ -8,6 +8,8 @@ export * from "./SpecialFeatures";
 export * from "./BorderPanel";
 export * from "./Form";
 export * from "./Button";
+export * from "./LogOut";
+export * from "./SwitchTheme";
 export * from "./LinkBtn";
 export * from "./NavLinkBtn";
 export * from "./Reminder";
