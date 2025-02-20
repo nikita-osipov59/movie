@@ -10,6 +10,7 @@ export * from "./Form";
 export * from "./Button";
 export * from "./LogOut";
 export * from "./SwitchTheme";
+export * from "./Settings";
 export * from "./LinkBtn";
 export * from "./NavLinkBtn";
 export * from "./Reminder";
