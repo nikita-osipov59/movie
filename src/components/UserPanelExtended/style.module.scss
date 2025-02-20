@@ -1,0 +1,30 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.userPanelExtended {
+  position: relative;
+  height: 53px;
+  .open {
+    position: absolute;
+    z-index: 3;
+    left: -148px;
+    bottom: -245px;
+    width: 250px;
+    @include border;
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: auto;
+      text-align: start;
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: auto;
+        border-top: 1px solid var(--color-border);
+        padding-top: 15px;
+      }
+    }
+  }
+}

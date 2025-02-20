@@ -11,9 +11,9 @@ import {
   Search,
 } from "@/components/ui";
 
-import { getAuthStore } from "@/store";
+import { UserPanelExtended } from "@/components";
 
-import { UserPanel } from "@/components";
+import { getAuthStore } from "@/store";
 
 import style from "./style.module.scss";
 
@@ -34,7 +34,7 @@ export const PrivateRoute = () => {
               <Search />
               <NotificationPanel />
             </div>
-            <UserPanel />
+            <UserPanelExtended />
           </div>
           <Suspense
             fallback={
