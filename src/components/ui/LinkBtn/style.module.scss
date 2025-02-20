@@ -2,9 +2,11 @@
 @import "@/styles/mixins.scss";
 
 .primary {
+  display: inline-block;
   @include linkPrimary;
 }
 
 .default {
+  display: inline-block;
   @include linkDefault;
 }

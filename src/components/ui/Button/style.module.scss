@@ -2,9 +2,11 @@
 @import "@/styles/mixins.scss";
 
 .primary {
+  display: inline-block;
   @include buttonPrimary;
 }
 
 .default {
+  display: inline-block;
   @include buttonDefault;
 }
