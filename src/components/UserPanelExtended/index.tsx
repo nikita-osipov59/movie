@@ -27,12 +27,12 @@ export const UserPanelExtended = () => {
   return (
     <div className={style.userPanelExtended} ref={menuRef}>
       <div onClick={() => setIsOpen(!isOpen)}>
-        <UserPanel />
+        <UserPanel type="button" />
       </div>
       {isOpen && (
         <div className={style.open}>
           <ul className={style.list}>
-            <UserPanel />
+            <UserPanel type="link" />
             <li className={style.item}>
               <Settings />
               <SwitchTheme />

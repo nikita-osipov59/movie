@@ -6,21 +6,35 @@ import { CircleUserRound } from "lucide-react";
 
 import { ROUTER_PATH } from "@/router/PATH";
 
+import { UserPanelProps } from "./UserPanel.props";
+
 import style from "./style.module.scss";
 
-export const UserPanel = () => {
+export const UserPanel: React.FC<UserPanelProps> = ({ type }) => {
   const { name, email, photoURL, id } = getAuthStore();
 
   return (
     <div className={style.userPanel}>
-      <Link to={ROUTER_PATH.PROFILE + `/${id}`} className={style.user}>
-        {photoURL ? (
-          <img className={style.avatar} src={photoURL} alt="avatar" />
-        ) : (
-          <CircleUserRound size={32} />
-        )}
-        <p>{name ? name : email}</p>
-      </Link>
+      {type === "link" && (
+        <Link to={ROUTER_PATH.PROFILE + `/${id}`} className={style.user}>
+          {photoURL ? (
+            <img className={style.avatar} src={photoURL} alt="avatar" />
+          ) : (
+            <CircleUserRound size={32} />
+          )}
+          <p>{name ? name : email}</p>
+        </Link>
+      )}
+      {type === "button" && (
+        <button className={style.user}>
+          {photoURL ? (
+            <img className={style.avatar} src={photoURL} alt="avatar" />
+          ) : (
+            <CircleUserRound size={32} />
+          )}
+          <p>{name ? name : email}</p>
+        </button>
+      )}
     </div>
   );
 };
