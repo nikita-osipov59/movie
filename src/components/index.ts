@@ -6,3 +6,4 @@ export * from "./MovieSimilars";
 export * from "./UserPanel";
 export * from "./UserPanelExtended";
 export * from "./ProfilePreview";
+export * from "./SettingsPanel";

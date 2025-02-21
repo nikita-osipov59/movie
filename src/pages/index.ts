@@ -4,5 +4,6 @@ export * from "./HomePage";
 export * from "./SearchPage";
 export * from "./MoviePage";
 export * from "./ProfilePage";
+export * from "./SettingsPage";
 export * from "./RecoveryPasswordPage";
 export * from "./NotFoundPage";

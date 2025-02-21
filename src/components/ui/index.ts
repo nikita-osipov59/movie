@@ -11,6 +11,7 @@ export * from "./Button";
 export * from "./LogOut";
 export * from "./SwitchTheme";
 export * from "./Settings";
+export * from "./SettingsList";
 export * from "./LinkBtn";
 export * from "./NavLinkBtn";
 export * from "./Reminder";
